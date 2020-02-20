@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="oknext.Main1Controller">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" text="Sign Out" />
+            <Button mnemonicParsing="false" onAction="#adduser" text="Add New" />
+            <Button mnemonicParsing="false" onAction="#updateuser" text="Update" />
+            <Button mnemonicParsing="false" onAction="#deleteuser" text="Delete" />
+            <TextField fx:id="search1" alignment="CENTER" onInputMethodTextChanged="#search" onKeyReleased="#search" promptText="Search" />
+        </items>
+      </ToolBar>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TextField fx:id="room1" alignment="CENTER" layoutX="13.0" layoutY="41.0" promptText="Room NO" />
+                  <TextField fx:id="capacity1" alignment="CENTER" layoutX="13.0" layoutY="98.0" promptText="Capacity" />
+                  <Button layoutX="23.0" layoutY="407.0" mnemonicParsing="false" onAction="#loaddatabase" prefHeight="30.0" prefWidth="132.0" text="Load Database" textFill="#513ac6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="slot1" alignment="CENTER" layoutX="15.0" layoutY="237.0" promptText="Slot" />
+                  <DatePicker fx:id="date1" layoutX="2.0" layoutY="163.0" />
+                  <RadioButton fx:id="r1" layoutX="14.0" layoutY="312.0" mnemonicParsing="false" text="YES">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="g2" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="r2" layoutX="14.0" layoutY="348.0" mnemonicParsing="false" text="NO" toggleGroup="$g2" />
+                  <Label alignment="CENTER" layoutX="7.0" layoutY="275.0" prefHeight="25.0" prefWidth="152.0" text="Booking Status" textFill="#18169a">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="date2" layoutX="1.0" layoutY="204.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="table" layoutX="14.0" layoutY="6.0" onMouseClicked="#showonclick" prefHeight="358.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="c1" prefWidth="75.0" text="Room NO" />
+                      <TableColumn fx:id="c2" prefWidth="75.0" text="Capacity" />
+                        <TableColumn fx:id="c3" prefWidth="75.0" text="Slot" />
+                        <TableColumn fx:id="c4" prefWidth="75.0" text="Status" />
+                        <TableColumn fx:id="c5" prefWidth="75.0" text="FROM" />
+                        <TableColumn fx:id="c6" prefWidth="75.0" text="TO" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+</BorderPane>
